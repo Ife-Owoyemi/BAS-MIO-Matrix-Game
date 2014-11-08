@@ -65,4 +65,15 @@ public abstract class GameObject {
 		this.jumping = jumping;
 	}
 
+	public void moveCommand(float xDelta, float yDelta) {
+		// TODO Auto-generated method stub
+		float currentXPosition = this.getX();
+		float currentYPosition = this.getY();
+		float newXPosition = currentXPosition + xDelta;
+		float newYPosition = currentYPosition + yDelta;
+		
+		this.setX(newXPosition);
+		this.setY(newYPosition);
+	}
+
 }

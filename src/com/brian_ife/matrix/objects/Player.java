@@ -14,13 +14,35 @@ public class Player extends GameObject{
 	
 	private float width = 48, height = 96;
 	private float gravity = 0.05f;
+	private Special special = Special.None; 
 	private final float MAX_SPEED = 5;
 	private Handler handler;
 	
-	public Player(float x, float y, Handler handler, ObjectId id) {
-		super(x, y, id);
+	public Player(float x, float y, Handler handler) {
+		super(x, y, ObjectId.Player);
 		this.handler = handler;
 	}
+	
+	
+	public void moveCommand(float xDelta, float yDelta) {
+	
+		velX = 2;
+		velY = 2;
+		Special playerSpecial = this.getSpecial();
+		
+		if (playerSpecial == Special.SuperSpeed){
+			velX = 4;
+			velY = 4;
+		}
+		
+		float xPostion =  this.getX();
+		float yPostion =  this.getY();
+		
+	
+		
+		
+	}
+	
 
 	public void updatePosition(LinkedList<GameObject> object) {
 		/*
@@ -65,6 +87,18 @@ public class Player extends GameObject{
 		g2d.draw(getBoundsRight());
 		g2d.draw(getBoundsLeft());
 		g2d.draw(getBoundsTop());
+	}
+	
+	public Special getSpecial(){
+		return special;
+	}
+	
+	public void setSpecial(Special newSpecial){
+		special = newSpecial;
+	}
+	
+	public void removeSpecial(){
+		special = Special.None;
 	}
 
 	public Rectangle getBounds() {

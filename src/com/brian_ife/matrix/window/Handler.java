@@ -38,7 +38,7 @@ public LinkedList<GameObject> object = new LinkedList<GameObject>();
 	public void createTestBlocks(){
 		
 		for(int xx = 0; xx < Game.WIDTH + 32; xx +=32){
-			addObject(new Block(xx, Game.HEIGHT - 32, ObjectId.Block));
+			addObject(new Block(xx, Game.HEIGHT - 32));
 		}
 		
 	}

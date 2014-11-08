@@ -10,8 +10,8 @@ import com.brian_ife.matrix.framework.ObjectId;
 
 public class Block extends GameObject{
 	
-	public Block(float x, float y, ObjectId id) {
-		super(x, y, id);
+	public Block(float x, float y) {
+		super(x, y, ObjectId.Block);
 		
 	}
 

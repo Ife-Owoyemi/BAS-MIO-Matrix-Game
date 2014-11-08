@@ -16,12 +16,25 @@ public class KeyInput extends KeyAdapter{
 	public void keyPressed(KeyEvent e){
 		int key = e.getKeyCode();
 		
+		// ? might there be a way for us to access the player object without going through the list of all game objects?
 		for(int i = 0; i < handler.object.size(); i++){
 			GameObject tempObject = handler.object.get(i);
 			if(tempObject.getId() == ObjectId.Player){
-				if(key == KeyEvent.VK_D) tempObject.setVelX(5);
-				if(key == KeyEvent.VK_A) tempObject.setVelX(-5);
-				if(key == KeyEvent.VK_SPACE) tempObject.setVelY(-10);
+				
+				if(key == KeyEvent.VK_D) {
+					tempObject.setVelX(5);
+				}
+				if(key == KeyEvent.VK_A) {
+					tempObject.setVelX(-5);
+				}
+				
+				if(key == KeyEvent.VK_W) {
+					tempObject.setVelX(-5);
+				}
+				
+				if(key == KeyEvent.VK_SPACE) {
+					tempObject.setVelY(-10);
+				}
 				
 			}
 			

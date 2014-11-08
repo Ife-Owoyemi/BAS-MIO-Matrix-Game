@@ -23,7 +23,7 @@ public class Game extends Canvas implements Runnable{
 		HEIGHT = getHeight();
 		
 		handler = new Handler();
-		handler.addObject(new Player(100, 100, handler, ObjectId.Player));
+		handler.addObject(new Player(100, 100, handler));
 		handler.createTestBlocks();
 		
 		this.addKeyListener(
